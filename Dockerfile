@@ -1,6 +1,6 @@
 FROM condaforge/miniforge3:latest as conda
 
-ARG RASA_VERSION="3.0.5"
+ARG RASA_VERSION="3.0.6"
 
 RUN apt update && apt install curl build-essential -y
 
@@ -27,6 +27,8 @@ RUN conda env create --file=./env.yml --name=rasa \
 
 RUN conda init && \
     echo "conda activate rasa" >> ~/.bashrc
+
+RUN python -m spacy download en_core_web_md
 
 ENV LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 

@@ -53,7 +53,7 @@ Verify that its working by executing `rasa init`.
 Choose one of the [available Rasa versions](/output/docker), and store it in an environment variable:
 
 ```bash
-export RASA_VERSION=3.0.5
+export RASA_VERSION=3.0.6
 ```
 
 Run the build script.
